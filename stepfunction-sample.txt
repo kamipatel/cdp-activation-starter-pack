@@ -1,0 +1,71 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "Get Latest Date Accounts",
+  "States": {
+    "Get Latest Date Accounts": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "Payload.$": "$",
+        "FunctionName": "arn:aws:lambda:us-east-1:122372346727:function:cdp-latest-accounts:$LATEST"
+      },
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "Lambda.ServiceException",
+            "Lambda.AWSLambdaException",
+            "Lambda.SdkClientException"
+          ],
+          "IntervalSeconds": 2,
+          "MaxAttempts": 6,
+          "BackoffRate": 2
+        }
+      ],
+      "Next": "Map"
+    },
+    "Map": {
+      "Type": "Map",
+      "Parameters": {
+        "index.$": "$$.Map.Item.Index",
+        "account.$": "$$.Map.Item.Value",
+        "dt.$": "$.Payload.body.latest_date",
+        "data.$": "$.Payload.body"
+      },
+      "Iterator": {
+        "StartAt": "Pass",
+        "States": {
+          "Pass": {
+            "Type": "Pass",
+            "Next": "Lambda Invoke"
+          },
+          "Lambda Invoke": {
+            "Type": "Task",
+            "Resource": "arn:aws:states:::lambda:invoke",
+            "OutputPath": "$.Payload",
+            "Parameters": {
+              "Payload.$": "$",
+              "FunctionName": "arn:aws:lambda:us-east-1:122372346727:function:stage-account:$LATEST"
+            },
+            "Retry": [
+              {
+                "ErrorEquals": [
+                  "Lambda.ServiceException",
+                  "Lambda.AWSLambdaException",
+                  "Lambda.SdkClientException"
+                ],
+                "IntervalSeconds": 2,
+                "MaxAttempts": 6,
+                "BackoffRate": 2
+              }
+            ],
+            "End": true
+          }
+        }
+      },
+      "End": true,
+      "MaxConcurrency": 3,
+      "ItemsPath": "$.Payload.body.unique_accounts",
+      "ResultPath": "$.taskresult"
+    }
+  }
+}

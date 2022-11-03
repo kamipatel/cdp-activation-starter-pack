@@ -1,0 +1,316 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CdpAwsStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdpAwsStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdpAwsStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "CdpAwsStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fecdc5fbb924876b0597f0ab795b04a0a7267ff7112510ef0eed58b9cd8ec0e0.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdpAwsStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CdpAwsStack.assets"
+      ],
+      "metadata": {
+        "/CdpAwsStack/CDP_BUCKET_NAME": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDPBUCKETNAME"
+          }
+        ],
+        "/CdpAwsStack/cdp-data-in-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpdatainbucketC7D5CD66"
+          }
+        ],
+        "/CdpAwsStack/cdp-data-stage-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpdatastagebucket33742964"
+          }
+        ],
+        "/CdpAwsStack/cdp-data-summary-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpdatasummarybucket3895A190"
+          }
+        ],
+        "/CdpAwsStack/cdp-data-fake-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpdatafakebucketEADADE21"
+          }
+        ],
+        "/CdpAwsStack/pi-aws-wrangler-layer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "piawswranglerlayer1E4ADBB3"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-info/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstageinfoServiceRoleC871305E"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-info/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstageinfoServiceRoleDefaultPolicy7C46775C"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-info/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstageinfo07303B73"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-account/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstageaccountServiceRoleDB3019AA"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-account/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstageaccountServiceRoleDefaultPolicy8BF62F87"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-account/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstageaccountB1870F5F"
+          }
+        ],
+        "/CdpAwsStack/cdp-activation/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpactivationServiceRole4FC8AA5D"
+          }
+        ],
+        "/CdpAwsStack/cdp-activation/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpactivationServiceRoleDefaultPolicy44AD8BD0"
+          }
+        ],
+        "/CdpAwsStack/cdp-activation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpactivation05AA3548"
+          }
+        ],
+        "/CdpAwsStack/cdp-summary/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpsummaryServiceRole6388C772"
+          }
+        ],
+        "/CdpAwsStack/cdp-summary/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpsummaryServiceRoleDefaultPolicy6909656F"
+          }
+        ],
+        "/CdpAwsStack/cdp-summary/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpsummary9A4BC0F6"
+          }
+        ],
+        "/CdpAwsStack/cdp-fake-info/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpfakeinfoServiceRole65537993"
+          }
+        ],
+        "/CdpAwsStack/cdp-fake-info/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpfakeinfoServiceRoleDefaultPolicy8F2E6B7B"
+          }
+        ],
+        "/CdpAwsStack/cdp-fake-info/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpfakeinfo588B3112"
+          }
+        ],
+        "/CdpAwsStack/cdp-fake-account/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpfakeaccountServiceRole39680DC6"
+          }
+        ],
+        "/CdpAwsStack/cdp-fake-account/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpfakeaccountServiceRoleDefaultPolicy0BE24994"
+          }
+        ],
+        "/CdpAwsStack/cdp-fake-account/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpfakeaccount4191F57B"
+          }
+        ],
+        "/CdpAwsStack/cdp-query/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpqueryServiceRole18C34D14"
+          }
+        ],
+        "/CdpAwsStack/cdp-query/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpquery51D1BA2A"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-statemachine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstagestatemachineRole3C4ADBBE"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-statemachine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstagestatemachineRoleDefaultPolicy2939DCE4"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-statemachine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstagestatemachine464901D3"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-statemachine/EventsRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstagestatemachineEventsRoleFBDFD70B"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-statemachine/EventsRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstagestatemachineEventsRoleDefaultPolicy23D089D1"
+          }
+        ],
+        "/CdpAwsStack/cdp-fake-statemachine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpfakestatemachineRoleEA05B4AB"
+          }
+        ],
+        "/CdpAwsStack/cdp-fake-statemachine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpfakestatemachineRoleDefaultPolicy59E2813D"
+          }
+        ],
+        "/CdpAwsStack/cdp-fake-statemachine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpfakestatemachine91D5B866"
+          }
+        ],
+        "/CdpAwsStack/cdp-stage-schedule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpstagescheduleEA480FAE"
+          }
+        ],
+        "/CdpAwsStack/CdpDataInUserPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdpDataInUserPolicy1E395947"
+          }
+        ],
+        "/CdpAwsStack/cdpDataStageBucketAccessPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpDataStageBucketAccessPolicyDDDC2B19"
+          }
+        ],
+        "/CdpAwsStack/cdpDataSummaryBucketAccessPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpDataSummaryBucketAccessPolicyCAD1500E"
+          }
+        ],
+        "/CdpAwsStack/cdp-group/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpgroup3D5E78EA"
+          }
+        ],
+        "/CdpAwsStack/cdpDataInUser/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpDataInUser3866B7D6"
+          }
+        ],
+        "/CdpAwsStack/cdpDataStageUser/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdpDataStageUser9413C294"
+          }
+        ],
+        "/CdpAwsStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CdpAwsStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/CdpAwsStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CdpAwsStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CdpAwsStack"
+    }
+  }
+}

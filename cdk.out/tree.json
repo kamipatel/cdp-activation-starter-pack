@@ -1,0 +1,2407 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.1.82"
+        }
+      },
+      "CdpAwsStack": {
+        "id": "CdpAwsStack",
+        "path": "CdpAwsStack",
+        "children": {
+          "CDP_BUCKET_NAME": {
+            "id": "CDP_BUCKET_NAME",
+            "path": "CdpAwsStack/CDP_BUCKET_NAME",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.8.0"
+            }
+          },
+          "${Token[TOKEN.202]}": {
+            "id": "${Token[TOKEN.202]}",
+            "path": "CdpAwsStack/${Token[TOKEN.202]}",
+            "children": {
+              "Notifications": {
+                "id": "Notifications",
+                "path": "CdpAwsStack/${Token[TOKEN.202]}/Notifications",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.1.82"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-pub-${Token[AWS.Region.12]}": {
+            "id": "cdp-pub-${Token[AWS.Region.12]}",
+            "path": "CdpAwsStack/cdp-pub-${Token[AWS.Region.12]}",
+            "children": {
+              "Notifications": {
+                "id": "Notifications",
+                "path": "CdpAwsStack/cdp-pub-${Token[AWS.Region.12]}/Notifications",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.1.82"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-data-in-bucket": {
+            "id": "cdp-data-in-bucket",
+            "path": "CdpAwsStack/cdp-data-in-bucket",
+            "children": {
+              "Notifications": {
+                "id": "Notifications",
+                "path": "CdpAwsStack/cdp-data-in-bucket/Notifications",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.1.82"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-data-in-bucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "publicAccessBlockConfiguration": {
+                      "blockPublicAcls": true,
+                      "blockPublicPolicy": true,
+                      "ignorePublicAcls": true,
+                      "restrictPublicBuckets": true
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-data-stage-bucket": {
+            "id": "cdp-data-stage-bucket",
+            "path": "CdpAwsStack/cdp-data-stage-bucket",
+            "children": {
+              "Notifications": {
+                "id": "Notifications",
+                "path": "CdpAwsStack/cdp-data-stage-bucket/Notifications",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.1.82"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-data-stage-bucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "publicAccessBlockConfiguration": {
+                      "blockPublicAcls": true,
+                      "blockPublicPolicy": true,
+                      "ignorePublicAcls": true,
+                      "restrictPublicBuckets": true
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-data-summary-bucket": {
+            "id": "cdp-data-summary-bucket",
+            "path": "CdpAwsStack/cdp-data-summary-bucket",
+            "children": {
+              "Notifications": {
+                "id": "Notifications",
+                "path": "CdpAwsStack/cdp-data-summary-bucket/Notifications",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.1.82"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-data-summary-bucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "publicAccessBlockConfiguration": {
+                      "blockPublicAcls": true,
+                      "blockPublicPolicy": true,
+                      "ignorePublicAcls": true,
+                      "restrictPublicBuckets": true
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-data-fake-bucket": {
+            "id": "cdp-data-fake-bucket",
+            "path": "CdpAwsStack/cdp-data-fake-bucket",
+            "children": {
+              "Notifications": {
+                "id": "Notifications",
+                "path": "CdpAwsStack/cdp-data-fake-bucket/Notifications",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.1.82"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-data-fake-bucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "publicAccessBlockConfiguration": {
+                      "blockPublicAcls": true,
+                      "blockPublicPolicy": true,
+                      "ignorePublicAcls": true,
+                      "restrictPublicBuckets": true
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "2.8.0"
+            }
+          },
+          "pi-aws-wrangler-layer": {
+            "id": "pi-aws-wrangler-layer",
+            "path": "CdpAwsStack/pi-aws-wrangler-layer",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/pi-aws-wrangler-layer/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                  "aws:cdk:cloudformation:props": {
+                    "content": {
+                      "s3Bucket": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "cdp-pub-",
+                            {
+                              "Ref": "AWS::Region"
+                            }
+                          ]
+                        ]
+                      },
+                      "s3Key": "awswrangler-layer-2.10.0-py3.8.zip"
+                    },
+                    "compatibleRuntimes": [
+                      "python3.8"
+                    ],
+                    "description": "aws datawrangler library"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.LayerVersion",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-stage-info": {
+            "id": "cdp-stage-info",
+            "path": "CdpAwsStack/cdp-stage-info",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "CdpAwsStack/cdp-stage-info/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-stage-info/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "CdpAwsStack/cdp-stage-info/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdpAwsStack/cdp-stage-info/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatainbucketC7D5CD66",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatainbucketC7D5CD66",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*",
+                                    "s3:DeleteObject*",
+                                    "s3:PutObject",
+                                    "s3:Abort*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatastagebucket33742964",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatastagebucket33742964",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatafakebucketEADADE21",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatafakebucketEADADE21",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Ref": "CDPBUCKETNAME"
+                                          }
+                                        ]
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Ref": "CDPBUCKETNAME"
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "cdpstageinfoServiceRoleDefaultPolicy7C46775C",
+                            "roles": [
+                              {
+                                "Ref": "cdpstageinfoServiceRoleC871305E"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.8.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-stage-info/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "cdp-pub-",
+                            {
+                              "Ref": "AWS::Region"
+                            }
+                          ]
+                        ]
+                      },
+                      "s3Key": "functions.zip",
+                      "s3ObjectVersion": "TlIG7xmGt8Oj.69o7p_BrriBr32WtvC9"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "cdpstageinfoServiceRoleC871305E",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "IN_BUCKET": {
+                          "Ref": "cdpdatainbucketC7D5CD66"
+                        },
+                        "STAGE_BUCKET": {
+                          "Ref": "cdpdatastagebucket33742964"
+                        },
+                        "EXISTING_BUCKET": {
+                          "Ref": "CDPBUCKETNAME"
+                        },
+                        "FAKE_BUCKET": {
+                          "Ref": "cdpdatafakebucketEADADE21"
+                        },
+                        "REGION": {
+                          "Ref": "AWS::Region"
+                        }
+                      }
+                    },
+                    "functionName": "cdp-stage-info",
+                    "handler": "stage-info.lambda_handler",
+                    "layers": [
+                      {
+                        "Ref": "piawswranglerlayer1E4ADBB3"
+                      }
+                    ],
+                    "memorySize": 2048,
+                    "runtime": "python3.8",
+                    "timeout": 840
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-stage-account": {
+            "id": "cdp-stage-account",
+            "path": "CdpAwsStack/cdp-stage-account",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "CdpAwsStack/cdp-stage-account/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-stage-account/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "CdpAwsStack/cdp-stage-account/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdpAwsStack/cdp-stage-account/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatainbucketC7D5CD66",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatainbucketC7D5CD66",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*",
+                                    "s3:DeleteObject*",
+                                    "s3:PutObject",
+                                    "s3:Abort*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatastagebucket33742964",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatastagebucket33742964",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatafakebucketEADADE21",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatafakebucketEADADE21",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Ref": "CDPBUCKETNAME"
+                                          }
+                                        ]
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Ref": "CDPBUCKETNAME"
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "cdpstageaccountServiceRoleDefaultPolicy8BF62F87",
+                            "roles": [
+                              {
+                                "Ref": "cdpstageaccountServiceRoleDB3019AA"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.8.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-stage-account/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "cdp-pub-",
+                            {
+                              "Ref": "AWS::Region"
+                            }
+                          ]
+                        ]
+                      },
+                      "s3Key": "functions.zip",
+                      "s3ObjectVersion": "TlIG7xmGt8Oj.69o7p_BrriBr32WtvC9"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "cdpstageaccountServiceRoleDB3019AA",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "IN_BUCKET": {
+                          "Ref": "cdpdatainbucketC7D5CD66"
+                        },
+                        "STAGE_BUCKET": {
+                          "Ref": "cdpdatastagebucket33742964"
+                        },
+                        "EXISTING_BUCKET": {
+                          "Ref": "CDPBUCKETNAME"
+                        },
+                        "FAKE_BUCKET": {
+                          "Ref": "cdpdatafakebucketEADADE21"
+                        },
+                        "REGION": {
+                          "Ref": "AWS::Region"
+                        }
+                      }
+                    },
+                    "functionName": "cdp-stage-account",
+                    "handler": "stage-account.lambda_handler",
+                    "layers": [
+                      {
+                        "Ref": "piawswranglerlayer1E4ADBB3"
+                      }
+                    ],
+                    "memorySize": 2048,
+                    "runtime": "python3.8",
+                    "timeout": 840
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-activation": {
+            "id": "cdp-activation",
+            "path": "CdpAwsStack/cdp-activation",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "CdpAwsStack/cdp-activation/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-activation/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "CdpAwsStack/cdp-activation/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdpAwsStack/cdp-activation/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*",
+                                    "s3:DeleteObject*",
+                                    "s3:PutObject",
+                                    "s3:Abort*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatastagebucket33742964",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatastagebucket33742964",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "cdpactivationServiceRoleDefaultPolicy44AD8BD0",
+                            "roles": [
+                              {
+                                "Ref": "cdpactivationServiceRole4FC8AA5D"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.8.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-activation/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "cdp-pub-",
+                            {
+                              "Ref": "AWS::Region"
+                            }
+                          ]
+                        ]
+                      },
+                      "s3Key": "functions.zip",
+                      "s3ObjectVersion": "TlIG7xmGt8Oj.69o7p_BrriBr32WtvC9"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "cdpactivationServiceRole4FC8AA5D",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "STAGE_BUCKET": {
+                          "Ref": "cdpdatastagebucket33742964"
+                        },
+                        "REGION": {
+                          "Ref": "AWS::Region"
+                        }
+                      }
+                    },
+                    "functionName": "cdp-activation",
+                    "handler": "activation.lambda_handler",
+                    "layers": [
+                      {
+                        "Ref": "piawswranglerlayer1E4ADBB3"
+                      }
+                    ],
+                    "memorySize": 2048,
+                    "runtime": "python3.8",
+                    "timeout": 840
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-summary": {
+            "id": "cdp-summary",
+            "path": "CdpAwsStack/cdp-summary",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "CdpAwsStack/cdp-summary/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-summary/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "CdpAwsStack/cdp-summary/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdpAwsStack/cdp-summary/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*",
+                                    "s3:DeleteObject*",
+                                    "s3:PutObject",
+                                    "s3:Abort*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatasummarybucket3895A190",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatasummarybucket3895A190",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "cdpsummaryServiceRoleDefaultPolicy6909656F",
+                            "roles": [
+                              {
+                                "Ref": "cdpsummaryServiceRole6388C772"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.8.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-summary/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "cdp-pub-",
+                            {
+                              "Ref": "AWS::Region"
+                            }
+                          ]
+                        ]
+                      },
+                      "s3Key": "functions.zip",
+                      "s3ObjectVersion": "TlIG7xmGt8Oj.69o7p_BrriBr32WtvC9"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "cdpsummaryServiceRole6388C772",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "SUMMARY_BUCKET": {
+                          "Ref": "cdpdatasummarybucket3895A190"
+                        },
+                        "REGION": {
+                          "Ref": "AWS::Region"
+                        }
+                      }
+                    },
+                    "functionName": "cdp-summary",
+                    "handler": "summary.lambda_handler",
+                    "layers": [
+                      {
+                        "Ref": "piawswranglerlayer1E4ADBB3"
+                      }
+                    ],
+                    "memorySize": 2048,
+                    "runtime": "python3.8",
+                    "timeout": 840
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-fake-info": {
+            "id": "cdp-fake-info",
+            "path": "CdpAwsStack/cdp-fake-info",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "CdpAwsStack/cdp-fake-info/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-fake-info/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "CdpAwsStack/cdp-fake-info/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdpAwsStack/cdp-fake-info/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*",
+                                    "s3:DeleteObject*",
+                                    "s3:PutObject",
+                                    "s3:Abort*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatafakebucketEADADE21",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatafakebucketEADADE21",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "cdpfakeinfoServiceRoleDefaultPolicy8F2E6B7B",
+                            "roles": [
+                              {
+                                "Ref": "cdpfakeinfoServiceRole65537993"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.8.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-fake-info/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "cdp-pub-",
+                            {
+                              "Ref": "AWS::Region"
+                            }
+                          ]
+                        ]
+                      },
+                      "s3Key": "functions.zip",
+                      "s3ObjectVersion": "TlIG7xmGt8Oj.69o7p_BrriBr32WtvC9"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "cdpfakeinfoServiceRole65537993",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "FAKE_BUCKET": {
+                          "Ref": "cdpdatafakebucketEADADE21"
+                        },
+                        "REGION": {
+                          "Ref": "AWS::Region"
+                        }
+                      }
+                    },
+                    "functionName": "cdp-fake-info",
+                    "handler": "fake-info.lambda_handler",
+                    "layers": [
+                      {
+                        "Ref": "piawswranglerlayer1E4ADBB3"
+                      }
+                    ],
+                    "memorySize": 1024,
+                    "runtime": "python3.8",
+                    "timeout": 840
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-fake-account": {
+            "id": "cdp-fake-account",
+            "path": "CdpAwsStack/cdp-fake-account",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "CdpAwsStack/cdp-fake-account/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-fake-account/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "CdpAwsStack/cdp-fake-account/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdpAwsStack/cdp-fake-account/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetObject*",
+                                    "s3:GetBucket*",
+                                    "s3:List*",
+                                    "s3:DeleteObject*",
+                                    "s3:PutObject",
+                                    "s3:Abort*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "cdpdatafakebucketEADADE21",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "cdpdatafakebucketEADADE21",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "cdpfakeaccountServiceRoleDefaultPolicy0BE24994",
+                            "roles": [
+                              {
+                                "Ref": "cdpfakeaccountServiceRole39680DC6"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.8.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-fake-account/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "cdp-pub-",
+                            {
+                              "Ref": "AWS::Region"
+                            }
+                          ]
+                        ]
+                      },
+                      "s3Key": "functions.zip",
+                      "s3ObjectVersion": "TlIG7xmGt8Oj.69o7p_BrriBr32WtvC9"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "cdpfakeaccountServiceRole39680DC6",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "FAKE_BUCKET": {
+                          "Ref": "cdpdatafakebucketEADADE21"
+                        },
+                        "REGION": {
+                          "Ref": "AWS::Region"
+                        }
+                      }
+                    },
+                    "functionName": "cdp-fake-account",
+                    "handler": "fake-account.lambda_handler",
+                    "layers": [
+                      {
+                        "Ref": "piawswranglerlayer1E4ADBB3"
+                      }
+                    ],
+                    "memorySize": 2048,
+                    "runtime": "python3.8",
+                    "timeout": 840
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-query": {
+            "id": "cdp-query",
+            "path": "CdpAwsStack/cdp-query",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "CdpAwsStack/cdp-query/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-query/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-query/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "cdp-pub-",
+                            {
+                              "Ref": "AWS::Region"
+                            }
+                          ]
+                        ]
+                      },
+                      "s3Key": "functions.zip",
+                      "s3ObjectVersion": "TlIG7xmGt8Oj.69o7p_BrriBr32WtvC9"
+                    },
+                    "role": {
+                      "Fn::GetAtt": [
+                        "cdpqueryServiceRole18C34D14",
+                        "Arn"
+                      ]
+                    },
+                    "environment": {
+                      "variables": {
+                        "STAGE_BUCKET": {
+                          "Ref": "cdpdatastagebucket33742964"
+                        },
+                        "REGION": {
+                          "Ref": "AWS::Region"
+                        }
+                      }
+                    },
+                    "functionName": "cdp-query",
+                    "handler": "query.lambda_handler",
+                    "layers": [
+                      {
+                        "Ref": "piawswranglerlayer1E4ADBB3"
+                      }
+                    ],
+                    "memorySize": 2048,
+                    "runtime": "python3.8",
+                    "timeout": 840
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "2.8.0"
+            }
+          },
+          "Stage Info": {
+            "id": "Stage Info",
+            "path": "CdpAwsStack/Stage Info",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+              "version": "2.8.0"
+            }
+          },
+          "Stage Account": {
+            "id": "Stage Account",
+            "path": "CdpAwsStack/Stage Account",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+              "version": "2.8.0"
+            }
+          },
+          "Stage Workflow complete!": {
+            "id": "Stage Workflow complete!",
+            "path": "CdpAwsStack/Stage Workflow complete!",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions.Succeed",
+              "version": "2.8.0"
+            }
+          },
+          "Fake Info": {
+            "id": "Fake Info",
+            "path": "CdpAwsStack/Fake Info",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+              "version": "2.8.0"
+            }
+          },
+          "Fake Account": {
+            "id": "Fake Account",
+            "path": "CdpAwsStack/Fake Account",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions_tasks.LambdaInvoke",
+              "version": "2.8.0"
+            }
+          },
+          "Fake Workflow complete!": {
+            "id": "Fake Workflow complete!",
+            "path": "CdpAwsStack/Fake Workflow complete!",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions.Succeed",
+              "version": "2.8.0"
+            }
+          },
+          "stageAccountsMap": {
+            "id": "stageAccountsMap",
+            "path": "CdpAwsStack/stageAccountsMap",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions.Map",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-stage-statemachine": {
+            "id": "cdp-stage-statemachine",
+            "path": "CdpAwsStack/cdp-stage-statemachine",
+            "children": {
+              "Role": {
+                "id": "Role",
+                "path": "CdpAwsStack/cdp-stage-statemachine/Role",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-stage-statemachine/Role/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "states.",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ".amazonaws.com"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "CdpAwsStack/cdp-stage-statemachine/Role/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdpAwsStack/cdp-stage-statemachine/Role/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "lambda:InvokeFunction",
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::GetAtt": [
+                                      "cdpstageinfo07303B73",
+                                      "Arn"
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Action": "lambda:InvokeFunction",
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::GetAtt": [
+                                      "cdpstageaccountB1870F5F",
+                                      "Arn"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "cdpstagestatemachineRoleDefaultPolicy2939DCE4",
+                            "roles": [
+                              {
+                                "Ref": "cdpstagestatemachineRole3C4ADBBE"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.8.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-stage-statemachine/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::StepFunctions::StateMachine",
+                  "aws:cdk:cloudformation:props": {
+                    "roleArn": {
+                      "Fn::GetAtt": [
+                        "cdpstagestatemachineRole3C4ADBBE",
+                        "Arn"
+                      ]
+                    },
+                    "definitionString": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{\"StartAt\":\"Stage Info\",\"States\":{\"Stage Info\":{\"Next\":\"stageAccountsMap\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+                          {
+                            "Ref": "AWS::Partition"
+                          },
+                          ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                          {
+                            "Fn::GetAtt": [
+                              "cdpstageinfo07303B73",
+                              "Arn"
+                            ]
+                          },
+                          "\",\"Payload.$\":\"$\"}},\"stageAccountsMap\":{\"Type\":\"Map\",\"Next\":\"Stage Workflow complete!\",\"Parameters\":{\"index.$\":\"$$.Map.Item.Index\",\"account.$\":\"$$.Map.Item.Value\",\"dt.$\":\"$.Payload.body.latest_date\",\"data.$\":\"$.Payload.body\",\"fake.$\":\"$.Payload.body.fake\"},\"Iterator\":{\"StartAt\":\"Stage Account\",\"States\":{\"Stage Account\":{\"End\":true,\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+                          {
+                            "Ref": "AWS::Partition"
+                          },
+                          ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                          {
+                            "Fn::GetAtt": [
+                              "cdpstageaccountB1870F5F",
+                              "Arn"
+                            ]
+                          },
+                          "\",\"Payload.$\":\"$\"}}}},\"ItemsPath\":\"$.Payload.body.unique_accounts\",\"MaxConcurrency\":5},\"Stage Workflow complete!\":{\"Type\":\"Succeed\"}},\"TimeoutSeconds\":10800}"
+                        ]
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions.CfnStateMachine",
+                  "version": "2.8.0"
+                }
+              },
+              "EventsRole": {
+                "id": "EventsRole",
+                "path": "CdpAwsStack/cdp-stage-statemachine/EventsRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-stage-statemachine/EventsRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "events.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "CdpAwsStack/cdp-stage-statemachine/EventsRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdpAwsStack/cdp-stage-statemachine/EventsRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "states:StartExecution",
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Ref": "cdpstagestatemachine464901D3"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "cdpstagestatemachineEventsRoleDefaultPolicy23D089D1",
+                            "roles": [
+                              {
+                                "Ref": "cdpstagestatemachineEventsRoleFBDFD70B"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.8.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions.StateMachine",
+              "version": "2.8.0"
+            }
+          },
+          "fakeAccountsMap": {
+            "id": "fakeAccountsMap",
+            "path": "CdpAwsStack/fakeAccountsMap",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions.Map",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-fake-statemachine": {
+            "id": "cdp-fake-statemachine",
+            "path": "CdpAwsStack/cdp-fake-statemachine",
+            "children": {
+              "Role": {
+                "id": "Role",
+                "path": "CdpAwsStack/cdp-fake-statemachine/Role",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "CdpAwsStack/cdp-fake-statemachine/Role/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "states.",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ".amazonaws.com"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.8.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "CdpAwsStack/cdp-fake-statemachine/Role/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdpAwsStack/cdp-fake-statemachine/Role/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "lambda:InvokeFunction",
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::GetAtt": [
+                                      "cdpfakeinfo588B3112",
+                                      "Arn"
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Action": "lambda:InvokeFunction",
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::GetAtt": [
+                                      "cdpfakeaccount4191F57B",
+                                      "Arn"
+                                    ]
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "cdpfakestatemachineRoleDefaultPolicy59E2813D",
+                            "roles": [
+                              {
+                                "Ref": "cdpfakestatemachineRoleEA05B4AB"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "2.8.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "2.8.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.8.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-fake-statemachine/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::StepFunctions::StateMachine",
+                  "aws:cdk:cloudformation:props": {
+                    "roleArn": {
+                      "Fn::GetAtt": [
+                        "cdpfakestatemachineRoleEA05B4AB",
+                        "Arn"
+                      ]
+                    },
+                    "definitionString": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{\"StartAt\":\"Fake Info\",\"States\":{\"Fake Info\":{\"Next\":\"fakeAccountsMap\",\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+                          {
+                            "Ref": "AWS::Partition"
+                          },
+                          ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                          {
+                            "Fn::GetAtt": [
+                              "cdpfakeinfo588B3112",
+                              "Arn"
+                            ]
+                          },
+                          "\",\"Payload.$\":\"$\"}},\"fakeAccountsMap\":{\"Type\":\"Map\",\"Next\":\"Fake Workflow complete!\",\"Parameters\":{\"index.$\":\"$$.Map.Item.Index\",\"account.$\":\"$$.Map.Item.Value\",\"total_segments.$\":\"$.Payload.body.total_segments\",\"total_activations.$\":\"$.Payload.body.total_activations\",\"chunk_size.$\":\"$.Payload.body.chunk_size\"},\"Iterator\":{\"StartAt\":\"Fake Account\",\"States\":{\"Fake Account\":{\"End\":true,\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\",\"Lambda.SdkClientException\"],\"IntervalSeconds\":2,\"MaxAttempts\":6,\"BackoffRate\":2}],\"Type\":\"Task\",\"Resource\":\"arn:",
+                          {
+                            "Ref": "AWS::Partition"
+                          },
+                          ":states:::lambda:invoke\",\"Parameters\":{\"FunctionName\":\"",
+                          {
+                            "Fn::GetAtt": [
+                              "cdpfakeaccount4191F57B",
+                              "Arn"
+                            ]
+                          },
+                          "\",\"Payload.$\":\"$\"}}}},\"ItemsPath\":\"$.Payload.body.accounts\",\"MaxConcurrency\":5},\"Fake Workflow complete!\":{\"Type\":\"Succeed\"}},\"TimeoutSeconds\":10800}"
+                        ]
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_stepfunctions.CfnStateMachine",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_stepfunctions.StateMachine",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-stage-schedule": {
+            "id": "cdp-stage-schedule",
+            "path": "CdpAwsStack/cdp-stage-schedule",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-stage-schedule/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Events::Rule",
+                  "aws:cdk:cloudformation:props": {
+                    "scheduleExpression": "rate(1 day)",
+                    "state": "ENABLED",
+                    "targets": [
+                      {
+                        "id": "Target0",
+                        "arn": {
+                          "Ref": "cdpstagestatemachine464901D3"
+                        },
+                        "roleArn": {
+                          "Fn::GetAtt": [
+                            "cdpstagestatemachineEventsRoleFBDFD70B",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_events.CfnRule",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_events.Rule",
+              "version": "2.8.0"
+            }
+          },
+          "CdpDataInUserPolicy": {
+            "id": "CdpDataInUserPolicy",
+            "path": "CdpAwsStack/CdpDataInUserPolicy",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/CdpDataInUserPolicy/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                  "aws:cdk:cloudformation:props": {
+                    "policyDocument": {
+                      "Statement": [
+                        {
+                          "Action": [
+                            "s3:PutObject",
+                            "s3:ListBucket"
+                          ],
+                          "Effect": "Allow",
+                          "Resource": {
+                            "Fn::GetAtt": [
+                              "cdpdatainbucketC7D5CD66",
+                              "Arn"
+                            ]
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policyName": "CdpDataInUserPolicy1E395947",
+                    "users": [
+                      {
+                        "Ref": "cdpDataInUser3866B7D6"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Policy",
+              "version": "2.8.0"
+            }
+          },
+          "cdpDataStageBucketAccessPolicy": {
+            "id": "cdpDataStageBucketAccessPolicy",
+            "path": "CdpAwsStack/cdpDataStageBucketAccessPolicy",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdpDataStageBucketAccessPolicy/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                  "aws:cdk:cloudformation:props": {
+                    "policyDocument": {
+                      "Statement": [
+                        {
+                          "Action": [
+                            "s3:GetObject",
+                            "s3:ListBucket"
+                          ],
+                          "Effect": "Allow",
+                          "Resource": {
+                            "Fn::GetAtt": [
+                              "cdpdatastagebucket33742964",
+                              "Arn"
+                            ]
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policyName": "cdpDataStageBucketAccessPolicyDDDC2B19",
+                    "users": [
+                      {
+                        "Ref": "cdpDataStageUser9413C294"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Policy",
+              "version": "2.8.0"
+            }
+          },
+          "cdpDataSummaryBucketAccessPolicy": {
+            "id": "cdpDataSummaryBucketAccessPolicy",
+            "path": "CdpAwsStack/cdpDataSummaryBucketAccessPolicy",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdpDataSummaryBucketAccessPolicy/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                  "aws:cdk:cloudformation:props": {
+                    "policyDocument": {
+                      "Statement": [
+                        {
+                          "Action": [
+                            "s3:GetObject",
+                            "s3:ListBucket"
+                          ],
+                          "Effect": "Allow",
+                          "Resource": {
+                            "Fn::GetAtt": [
+                              "cdpdatasummarybucket3895A190",
+                              "Arn"
+                            ]
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "policyName": "cdpDataSummaryBucketAccessPolicyCAD1500E",
+                    "users": [
+                      {
+                        "Ref": "cdpDataStageUser9413C294"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Policy",
+              "version": "2.8.0"
+            }
+          },
+          "cdp-group": {
+            "id": "cdp-group",
+            "path": "CdpAwsStack/cdp-group",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdp-group/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Group",
+                  "aws:cdk:cloudformation:props": {}
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnGroup",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Group",
+              "version": "2.8.0"
+            }
+          },
+          "cdpDataInUser": {
+            "id": "cdpDataInUser",
+            "path": "CdpAwsStack/cdpDataInUser",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdpDataInUser/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::User",
+                  "aws:cdk:cloudformation:props": {}
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnUser",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.User",
+              "version": "2.8.0"
+            }
+          },
+          "cdpDataStageUser": {
+            "id": "cdpDataStageUser",
+            "path": "CdpAwsStack/cdpDataStageUser",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdpAwsStack/cdpDataStageUser/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::User",
+                  "aws:cdk:cloudformation:props": {}
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnUser",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.User",
+              "version": "2.8.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "CdpAwsStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "CdpAwsStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.8.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "CdpAwsStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.8.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.82"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.8.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.8.0"
+    }
+  }
+}
